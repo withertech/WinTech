@@ -1,0 +1,437 @@
+/*body{
+  margin: 0;
+  padding: 0;
+  font-family: 'helvetica';
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}*/
+body{
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    color:white;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'helvetica neue';
+    /*background-color: black;*/
+}
+/*@media (max-device-width: 375){
+  body{
+    -webkit-transform:scale(0.908);
+    -webkit-transform-origin: top left;
+  }
+}
+@media (max-device-width: 320){
+  body{
+    -webkit-transform:scale(0.77299);
+    -webkit-transform-origin: top left;
+  }
+}*/
+.iWidget{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color:white;
+  z-index: 1;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.notouch{
+  pointer-events: none;
+}
+.bottomBar{
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter:blur(10px);
+  bottom:0;
+  z-index: 2;
+}
+.bottomTapBar{
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom:0;
+  z-index: 2;
+}
+.startButton{
+  width: 50px;
+  height: 40px;
+  background-color: #242424;
+  position: absolute;
+  background-image:url('../images/icon.png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 8px 8px;
+  left:0;
+}
+.switcher{
+  position: absolute;
+  left:40px;
+  height: 40px;
+  width: 190px;
+}
+.switcher li{
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.switcher li:first-child{
+  margin-left: 15px;
+}
+.switcher img{
+  width: 25px;
+}
+
+/* Time and Date */
+.timeDate{
+  width: 70px;
+  height: 40px;
+  position: absolute;
+  right: 5px;
+}
+#time, #date{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+#time{
+  top:5px;
+  text-transform: uppercase;
+}
+#date{
+  bottom:5px;
+}
+
+/* Info Bar */
+.infoBar{
+  width: 105px;
+  height: 40px;
+  position: absolute;
+  right:70px;
+  z-index: 2;
+}
+.infoBar li{
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 10px;
+  margin-right: 5px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+}
+.infoBar img{
+  width: 20px;
+}
+#battery, #batteryinsides{
+  position: absolute;
+  top:17px;
+}
+#battery{
+  width: 20px;
+  height: 8px;
+  outline:1px solid white;
+}
+#battery:after{
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 6px;
+  background-color: white;
+  margin-left:10px;
+  margin-top: 1px;
+}
+#batteryinsides{
+  width: 2px;
+  height: 6px;
+  margin-top: 1px;
+  margin-left: 1px;
+  background-color: white;
+}
+.wifi,.carat{
+  margin-left: 4px;
+}
+
+/* Menu */
+#menu{
+  width: 220px;
+  height: 560px;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter:blur(10px);
+  position: absolute;
+  bottom: 40px;
+  z-index: 2;
+}
+#menu div{
+  position: absolute;
+}
+#username{
+  left:45px;
+  top:16px;
+  font-size: 12px;
+}
+#avatar{
+  top:10px;
+  left:10px;
+  width: 25px;
+  height: 25px;
+  background-image: url("file:///var/mobile/Library/SpringBoard/HomeBackgroundThumbnail.jpg");
+  background-size: cover;
+  border-radius: 30px;
+}
+
+/* Fav Apps */
+#favAppsTxt, #lastOpened{
+  font-size: 10px;
+  opacity: 0.8;
+}
+#favAppsTxt{
+  top:50px;
+  left:10px;
+}
+#favApps{
+  left:15px;
+  top:70px;
+}
+#favApps li{
+  list-style-type: none;
+  margin-top: 5px;
+  width: 200%;
+}
+#favApps li img{
+  width: 45px;
+  pointer-events:none;
+}
+#favApps label{
+  position: relative;
+  font-size: 12px;
+  top: -16px;
+  left:10px;
+  text-transform: capitalize;
+  pointer-events:none;
+}
+
+/* Bottom Apps */
+#bottomApps{
+  width: 200px;
+  height: 140px;
+  bottom:60px;
+  position: absolute;
+}
+#bottomApps li:first-child{
+  margin-top:0px;
+}
+#bottomApps li{
+  list-style-type: none;
+  margin-left:10px;
+  margin-top:3px;
+  width: 100%;
+}
+#bottomApps span img{
+  width: 30px;
+  pointer-events:none;
+}
+#bottomApps span label{
+  position: relative;
+  top:-10px;
+  left:5px;
+  font-size: 10px;
+  pointer-events:none;
+}
+
+/*Info Panel*/
+#infoPanel{
+  position: absolute;
+  width: 150px;
+  height: 175px;
+  background-color: red;
+  bottom:40px;
+  right:0px;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter:blur(10px);
+  z-index: 9;
+}
+#infoPanel div{
+  position: absolute;
+}
+#ramTxt, #dataTxt, #spaceTxt{
+  font-size: 10px;
+  opacity: 0.8;
+}
+#ramTxt{
+  left:10px;
+  top:10px;
+}
+#dataTxt{
+  left:10px;
+  top:80px;
+}
+#spaceTxt{
+  left:10px;
+  top:135px;
+}
+#ramF, #ramU, #ramA, #dataU, #dataD, #spaceL{
+  left:15px;
+  font-size: 12px;
+}
+#ramF{
+  top:25px;
+}
+#ramU{
+  top:40px;
+}
+#ramA{
+  top:55px;
+}
+#dataU{
+  top:95px;
+}
+#dataD{
+  top:110px;
+}
+#spaceL{
+  top:150px;
+}
+
+/* Notifications */
+.notifyTop{
+  top:0;
+}
+.notifyBottom{
+  bottom:10px;
+}
+#notifications{
+  position: absolute;
+  width: 20px;
+  right: 0;
+  z-index: 3;
+  opacity: 0.8;
+  padding: 15px;
+}
+#notificationIcon{
+  width: 20px;
+}
+#notificationText{
+  position: absolute;
+  margin-top: 19px;
+  left:0;
+  width: 100%;
+  text-align: center;
+  font-size: 7px;
+}
+#notificationPanel{
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  right:0;
+  bottom:40px;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter:blur(10px);
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
+  z-index: 2;
+}
+#notificationApps li:first-child{
+  margin-top: 80px;
+}
+#notificationApps li{
+  left:0;
+  margin-top:10px;
+  margin-left: -14px;
+  list-style-type: none;
+}
+#notificationApps img{
+  width: 50px;
+  pointer-events:none;
+}
+#notificationApps label{
+  position: relative;
+  width: 30px;
+  text-align: center;
+  display: block;
+  left:10px;
+  pointer-events:none;
+}
+@font-face{
+  font-family: 'Wifi';
+  src:url('../fonts/Outlined.ttf');
+}
+#iwidget{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+/* app holder */
+.bgHolder{
+
+}
+#addIcon{
+  position: absolute;
+  font-size: 60px;
+  color: white;
+  right:15px;
+  top:0;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.2;
+}
+.bgHolder li:first-child{
+
+}
+.bgHolder li{
+  position: absolute;
+  list-style-type: none;
+  width: 60px;
+}
+.bgHolder img{
+  width: 60px;
+  pointer-events:none;
+}
+.bgHolder label{
+  position: relative;
+  width: 60px;
+  font-size: 10px;
+  text-align: center;
+  display: block;
+  pointer-events:none;
+}
+.bgHolder label:empty{
+  display: none;
+}
+
+/*App picker*/
+#appPicker{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 2;
+  height: 95%;
+  font-size:12px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter:blur(10px);
+}
+#appPicker li:first-child{
+  margin-top:25px;
+}
+#appPicker li{
+  list-style-type: none;
+  padding: 10px;
+  text-align: left;
+}
+
+

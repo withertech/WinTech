@@ -1,0 +1,291 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=3, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="src/css/main.css">
+  <link rel="stylesheet" type="text/css" href="src/css/drawer.css">
+  <link rel="stylesheet" type="text/css" href="src/css/drawerIconMenu.css">
+  <link rel="stylesheet" type="text/css" href="src/css/jpopup.css">
+</head>
+<body>
+  <div class="iWidget" id="iWidgetMain">
+    <div id="iwidget" class="bgHolder" title="bg">
+      <ul id="appContainer">
+        <!-- <li class="appIcons" title="test"><img src="src/images/test.png"/><div></div><label>AppStore</label></li>
+        <li class="appIcons" title="test2"><img src="src/images/test.png"/><div></div><label>AngleMeter</label></li> -->
+      </ul>
+    </div>
+    <div id="appPicker" style="display:none;">
+      <li>Screenshot</li>
+      <li>Screenshot</li>
+      <li>Screenshot</li>
+    </div>
+    <div id="infoPanel" style="display:none;">
+      <div id="ramTxt">Memory</div>
+      <div id="ramF">Free: <span id="ramFree">298mb</span></div>
+      <div id="ramU">Used: <span id="ramUsed">298mb</span></div>
+      <div id="ramA">Total: <span id="ramAvailable">298mb</span></div>
+      <div id="dataTxt">Info</div>
+      <div id="dataU">Battery: <span id="dataUpload">100%</span></div>
+      <div id="dataD">Firmware: <span id="dataDownload">iOS 11</span></div>
+      <div id="spaceTxt">Space</div>
+      <div id="spaceL">Free: <span id="spaceLeft">298mb</span></div>
+    </div>
+    <div id="notificationPanel" style="display:none;">
+      <ul id="notificationApps">
+        <li><img src="src/images/test.png"/><div></div><label>25</label></li>
+        <li><img src="src/images/test.png"/><div></div><label>2</label></li>
+        <li><img src="src/images/test.png"/><div></div><label>2</label></li>
+      </ul>
+    </div>
+    <div class="bottomTapBar" id="bottomTap"></div>
+    <div class="bottomBar" id="bottomBar">
+      <div id="start" class="startButton"></div>
+      <div class="switcher" id="switcher">
+        <li><img src="src/images/test.png"/></li>
+        <li><img src="src/images/test.png"/></li>
+        <li><img src="src/images/test.png"/></li>
+        <li><img src="src/images/test.png"/></li>
+      </div>
+      <div class="timeDate" id="timeDate">
+        <div id="time">6:30 PM</div>
+        <div id="date">7/30/2016</div>
+      </div>
+      <div class="infoBar" id="infoBar">
+        <li class="wifi"><img id="wifi" src="src/images/wifi/signal1.png"/></li>
+        <li><div id="battery"></div><div id="batteryinsides"></div></li>
+        <li id="carat" class="carat"><img src="src/images/wifi/carat.png"/></li>
+      </div>
+    </div>
+    <div id="menu" style="display:none;">
+      <div id="avatar"></div>
+      <div id="username">JunesiPhone</div>
+      <div id="notifications" class="notifyTop">
+        <img id="notificationIcon" src="src/images/menu/bell.png"/>
+        <span id="notificationText"></span>
+      </div>
+      <div id="favAppsTxt">Favorite Apps</div>
+      <div id="favApps">
+        <li id="app1"><img src="src/images/test.png"/><label>AppStore</label></li>
+        <li id="app2"><img src="src/images/test.png"/><label>AppStore</label></li>
+        <li id="app3"><img src="src/images/test.png"/><label>AppStore</label></li>
+        <li id="app4"><img src="src/images/test.png"/><label>AppStore</label></li>
+        <li id="app5"><img src="src/images/test.png"/><label>AppStore</label></li>
+      </div>
+      <div id="bottomApps">
+        <li title="com.saurik.Cydia">
+          <span class="notouch"><img src="src/images/menu/cydia.png"/></span>
+          <span class="notouch"><label>Cydia</label></span>
+        </li>
+        <li title="com.apple.Preferences">
+          <span class="notouch"><img src="src/images/menu/settings.png"/></span>
+          <span class="notouch"><label>Settings</label></span>
+        </li>
+        <li title="com.apple.mobilesafari">
+          <span class="notouch"><img src="src/images/menu/safari.png"/></span>
+          <span class="notouch"><label>Safari</label></span>
+        </li>
+        <li title="lock">
+          <span class="notouch"><img src="src/images/menu/power.png"/></span>
+          <span class="notouch"><label>Respring</label></span>
+        </li>
+        <li id="drawer" title="allApps">
+          <span class="notouch"><img src="src/images/menu/apps.png"/></span>
+          <span class="notouch"><label>All Apps</label></span>
+        </li>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP DRAWER -->
+<!-- <link rel="stylesheet" type="text/css" href="src/css/appLauncherDark.css">
+<div id="appDrawerDiv" class="appContainer">
+  <div class="appOptions">
+    <span id="edit">Z</span>
+    <span id="fav" style="background-color: rgba(0,0,0,0.1);">Favorites</span>
+    <span id="all">All Apps</span>
+    <span id="close">2</span>
+  </div>
+  <ul id="iconContainer"></ul>
+</div> -->
+<!-- END DRAWER -->
+
+  <script src="src/js/lang.js"></script>
+  <script src="src/js/clock.js"></script>
+  <script src="src/js/bundles.js"></script>
+  <script src="src/js/blacklist.js"></script>
+  <script src="src/js/helpers.js"></script>
+  <script src="src/js/jquery1.12.4.js"></script>
+  <script src="src/js/jqueryUI.js"></script>
+  <script src="src/js/UITouchPunch.js"></script>
+  <script src="src/js/events.js"></script>
+  <script src="src/js/drawer.js"></script>
+  <script src="src/js/jpopup.js"></script>
+  <script src="src/js/taphold.js"></script>
+  <script src="src/js/loadsaved.js"></script>
+
+<script>
+
+function loadNotifiedApps(){
+    var apps = FPI.apps.all,
+        badge, bundle, i,
+        holder = document.getElementById('notificationApps');
+        holder.innerHTML = "";
+    for (i = 0; i < apps.length; i++) {
+      bundle = apps[i].bundle
+      badge = FPI.bundle[apps[i].bundle].badge;
+      if(badge != -1 && badge >= 1){
+          icon = '/var/mobile/Library/FrontPageCache/' + bundle + '.png';
+          li = document.createElement('li');
+          img = document.createElement('img');
+          label = document.createElement('label');
+          div = document.createElement('div');
+          li.setAttribute('title', bundle);
+          img.src = icon;
+          label.innerHTML = badge;
+          li.appendChild(img);
+          li.appendChild(div);
+          li.appendChild(label);
+          holder.appendChild(li);
+      }
+    }
+}
+
+
+//<li><img src="src/images/test.png"/><div></div><label>25</label></li>
+
+var tries = 0;
+function loadBackground(){
+  var img = new Image();
+    img.onload = function(){
+      document.getElementById('avatar').style.backgroundImage = 'url("' + img.src + '")';
+      tries = 0;
+    }; 
+    img.onerror = function(){
+        tries ++;
+        if(tries < 3){
+          img.src = "file:///var/mobile/Library/SpringBoard/LockBackgroundThumbnail.jpg";
+        }
+    };
+    img.src = "file:///var/mobile/Library/SpringBoard/HomeBackgroundThumbnail.jpg";
+}
+
+
+var FPI = {}, openApp, appsInstalled, setFPIInfo, FPIloaded, loadApps, badgeUpdated, loadBattery, loadStatusBar, selectedImageFromFP, selectedImageFromFPCanceled, loadMemory,
+// values for wifi bars
+ar = [0, 5, 10, 15],
+ // values for signal bars
+ar2 = [100, 76, 52, 28, 0];
+
+openApp = function (bundle) {
+    window.location = 'frontpage:openApp:' + bundle;
+};
+appsInstalled = function () {
+  FPI.drawer.reloadIcons();
+};
+setFPIInfo = function (info, label, parse) {
+    if (parse) {
+        FPI[label] = JSON.parse(info);
+    } else {
+        FPI[label] = info;
+    }
+};
+FPIloaded = function () {
+  var iconW = 11,
+      iconM = 25,
+      pagingAmount = 20;
+  // iPhone X
+  if(window.innerHeight == 812){
+      iconW = 12;
+      iconM = 15;
+      pagingAmount = 32;
+  }
+  // iPhone 7
+  if(window.innerHeight == 667){
+      iconW = 11;
+      iconM = 23;
+      pagingAmount = 20;
+  }
+  // iPhone 5, 5s, SE
+  if(window.innerHeight == 568){
+    iconW = 10;
+    iconM = 20;
+    pagingAmount = 20;
+  }
+  FPI.drawer = new Drawer({
+      labels: true,
+      idPrefix: "APP",
+      pagingAmount: pagingAmount,
+      iconWidth: iconW,
+      iconMargin: iconM,
+      pageSpacing: 20,
+      pagePadding: 10,
+      labelTopPadding: 1,
+  });
+  loadSavedApps.init();
+  loadFromStorage(); //loads desktop apps
+};
+loadApps = function () {
+  //FPI.drawer.reloadIcons();
+};
+badgeUpdated = function (bundle) {
+    FPI.drawer.updateBadge(bundle);
+    var badge = "";
+    if(FPI.bundle[bundle].badge > 0){
+      badge = FPI.bundle[bundle].badge;
+    }
+    try{
+      document.getElementById(bundle).children[0].children[2].innerHTML = badge;
+    }catch(err){
+    }
+};
+loadMemory = function(){
+  try{
+  document.getElementById('ramFree').innerHTML = FPI.memory.ramFree + ' MB';
+  document.getElementById('ramUsed').innerHTML = FPI.memory.ramUsed + ' MB';
+  document.getElementById('ramAvailable').innerHTML = FPI.memory.ramFree + FPI.memory.ramUsed + ' MB';
+  }catch(err){
+    console.log(err);
+  }
+};
+loadBattery = function(){
+  setBattery(FPI.battery.percent, 'batteryinsides', 18);
+  document.getElementById('dataUpload').innerHTML = FPI.battery.percent + '%';
+  document.getElementById('dataDownload').innerHTML = FPI.system.firmware;
+  document.getElementById('spaceLeft').innerHTML = Math.round(FPI.system.freeStorage) + ' GB';
+  document.getElementById('username').innerHTML = FPI.system.deviceName;
+};
+loadStatusBar = function(){
+  if(FPI.statusbar.wifiName == 'NA'){
+    document.getElementById('wifi').src = 'src/images/wifi/signal' + FPI.statusbar.signalBars + '.png';
+  }else{
+    document.getElementById('wifi').src = 'src/images/wifi/wifi' + FPI.statusbar.wifiBars + '.png';
+  }
+};
+loadSystem = function(){
+  
+};
+loadSwitcher = function(){
+  // var appBundles = FPI.switcher.bundles;
+  // loadFavs(appBundles);
+};
+loadNotifications = function(){};
+loadFolders = function(){};
+loadAlarms = function(){};
+loadWeather = function(){
+
+};
+deviceUnlocked = function(){};
+selectedImageFromFP = function(img){
+  changeApps.replaceAndSaveIcon(img);
+  changeApps.changingIcon = false;
+  changeApps.changingApp = false;
+};
+selectedImageFromFPCancelled = function(){
+  changeApps.changingIcon = false;
+  changeApps.changingApp = false;
+};
+</script>
+  <script src="/var/FPI.js"></script>
+</body>
+</html>
